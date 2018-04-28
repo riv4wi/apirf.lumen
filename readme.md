@@ -7,10 +7,10 @@ The relationships for now, for these entities are:
 1 Vehicle *belongs_to 1* Manufacturer (belongsTo)
 1 Manufacturer *manufactures* N Vehicle (hasMany)
 
-The goal is to create a multilanguage RESTful API always trying best practices. Any observation is welcome!
+The goal is to create a multilanguage RESTful API in Lumen, always trying best practices. Any observation is welcome!
 
 # How To #
-Check extended documentation in **apirf-laravel.master.pdf**
+Check extended documentation in **apirf-lumen.master.pdf**
 
 # Installation guide #
 
@@ -31,6 +31,6 @@ php artisan key:generate
 - **OS** Linux Mint 18.2 Sonya - Cinnamon 3.4.3
 - **Apache** 2.4.18 (Ubuntu)1.5.6
 - **PHP** 7.0.22-0ubuntu0.16.04.1 (cli) (NTS)
-- **Laravel Framework** 5.6.16
+- **Laravel Framework Lumen** 5.6.3
 - **Composer** 1.5.6
 
