@@ -59,9 +59,10 @@ $app->singleton(
 |
 */
 
-// $app->middleware([
-//    App\Http\Middleware\ExampleMiddleware::class
-// ]);
+/* Middleware for management of languages */
+ $app->middleware([
+    App\Http\Middleware\Localization::class
+ ]);
 
 // $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
@@ -98,5 +99,7 @@ $app->router->group([
 ], function ($router) {
     require __DIR__.'/../routes/web.php';
 });
+
+$app->configure('app');
 
 return $app;

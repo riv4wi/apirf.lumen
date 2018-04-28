@@ -1,0 +1,517 @@
+{
+	"info": {
+		"_postman_id": "263dda9c-d8b7-44e6-867b-00e330170ce4",
+		"name": "apirf.lumen",
+		"description": "# What about this?\nThis API, is a simple exercise of the development of an API in Lumen. As a business logic, 2 entities are managed: Manufacturer and vehicle. There is more information (in spanish) in the document apirf-laravel.master.pdf\n\nThe API has support for 5 example languages, Arabic (ar), Spanish (sp), Italian (it), Brazilian Portuguese (pt-BR) and English (en). To select the language, you must pass the Accept-Language header with the value of the desired language",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add manufacturer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ar"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "هونداي",
+							"type": "text"
+						},
+						{
+							"key": "website",
+							"value": "hyundai.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers"
+					]
+				},
+				"description": "Add a manufacturer"
+			},
+			"response": [
+				{
+					"id": "f113ae79-bc36-4b2c-aa16-cb0b45039b71",
+					"name": "Add manufacturer - eg",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "نيسان",
+									"type": "text"
+								},
+								{
+									"key": "website",
+									"value": "nissan.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://apirf.lar/api/manufacturers",
+							"protocol": "http",
+							"host": [
+								"apirf",
+								"lar"
+							],
+							"path": [
+								"api",
+								"manufacturers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete a manufacturer",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "sp"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apirf.lar/api/manufacturers/1",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lar"
+					],
+					"path": [
+						"api",
+						"manufacturers",
+						"1"
+					]
+				},
+				"description": "Delete a manufacturer. The manufacturer's code must be passed as a parameter"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit a manufacturer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "pt-BR"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Chevrolet",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "website",
+							"value": "chevrolet.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers/1",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers",
+						"1"
+					]
+				},
+				"description": "Edit a manufacturer. The manufacturer's code must be passed as a parameter"
+			},
+			"response": []
+		},
+		{
+			"name": "List of vehicles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "sp"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers/1/vehicles",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers",
+						"1",
+						"vehicles"
+					]
+				},
+				"description": "List of vehicles of a manufacturer in stock. The manufacturer's code must be passed as a parameter"
+			},
+			"response": []
+		},
+		{
+			"name": "List of manufacturers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ar"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers"
+					]
+				},
+				"description": "Shows a list of registered manufacturers"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a vehicle",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ar"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers/1/vehicles/5",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers",
+						"1",
+						"vehicles",
+						"5"
+					]
+				},
+				"description": "Delete a vehicle.  It is necessary to pass as parameters, the manufacturer's code and the vehicle code"
+			},
+			"response": []
+		},
+		{
+			"name": "Data of a vehicle",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "sp"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers/1/vehicles/5",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers",
+						"1",
+						"vehicles",
+						"5"
+					]
+				},
+				"description": "Data of a vehicle. It is necessary to pass as parameters, the manufacturer's code and the vehicle code"
+			},
+			"response": []
+		},
+		{
+			"name": "Add vehicle",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ar"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "model",
+							"value": "Tucson",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "Café",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers/8/vehicles",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers",
+						"8",
+						"vehicles"
+					]
+				},
+				"description": "Add a vehicle to stock. The manufacturer's code must be passed as a parameter"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit a vehicle",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "sp"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "color",
+							"value": "Negro",
+							"type": "text"
+						},
+						{
+							"key": "model",
+							"value": "Sony",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers/1/vehicles/5",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers",
+						"1",
+						"vehicles",
+						"5"
+					]
+				},
+				"description": "Edit a vehicle. It is necessary to pass as parameters, the manufacturer's code and the vehicle code"
+			},
+			"response": []
+		},
+		{
+			"name": "Data of a manufacturer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ar"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apirf.lumen/api/manufacturers/8",
+					"protocol": "http",
+					"host": [
+						"apirf",
+						"lumen"
+					],
+					"path": [
+						"api",
+						"manufacturers",
+						"8"
+					]
+				},
+				"description": "Data of a manufacturer. The manufacturer's code must be passed as a parameter"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e505fc8a-f8ee-4016-b324-f90844690b92",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "95e9181a-eb10-448a-ad60-b0a4f272cb4f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
