@@ -19,6 +19,9 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router) {
 
     /* Manufacturers */
+
+    // Other way by each route, but I prefer in the Controller
+    // $router->get('manufacturers',  ['middleware'=>'auth', 'uses' => 'ManufacturerController@index']);
     $router->get('manufacturers',  ['uses' => 'ManufacturerController@index']);
 
     $router->get('manufacturers/{id}', ['uses' => 'ManufacturerController@show']);
