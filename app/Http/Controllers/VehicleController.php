@@ -10,6 +10,20 @@ use Illuminate\Support\Facades\DB;
 
 class VehicleController extends Controller
 {
+    /**
+     * Constructor
+     *
+     * @access public
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => [
+            'index',
+            'store',
+            'update',
+            'destroy'
+        ]]);
+    }
 
     /**
      * Display a listing of the resource.

@@ -12,6 +12,11 @@ to the forms to process those requests */
 
 class ManufacturerController extends Controller
 {
+    /**
+     * Constructor
+     *
+     * @access public
+     */
     public function __construct()
     {
         $this->middleware('auth', ['only' => [
