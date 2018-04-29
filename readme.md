@@ -1,16 +1,11 @@
 # What is this about? #
 It is a continuation of the development of a RESTful API in Laravel, because Lumen is focused on the development of APIs due to its lightness and the benefits that are inherited from Laravel.
 
-As in the past development in Laravel, https://github.com/riv4wi/apirf-laravel, I will use 3 entities: **user, vehicle** and **manufacturer**.
-
-The relationships for now, for these entities are:
-1 Vehicle *belongs_to 1* Manufacturer (belongsTo)
-1 Manufacturer *manufactures* N Vehicle (hasMany)
-
-The goal is to create a multilanguage RESTful API in Lumen, always trying best practices. Any observation is welcome!
+In this brach **ft-authentication-with-token-very-simple** the goal is to integrate authentication very simple with a token passed by HTTP header to API
 
 # How To #
 Check extended documentation in **apirf-lumen.master.pdf**
+and **apirf-lumen.ft-authentication-with-token-very-simple.pdf**
 
 # Installation guide #
 
