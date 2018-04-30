@@ -7,10 +7,13 @@ The relationships for now, for these entities are:
 1 Vehicle *belongs_to 1* Manufacturer (belongsTo)
 1 Manufacturer *manufactures* N Vehicle (hasMany)
 
-The goal is to create a multilanguage RESTful API in Lumen, always trying best practices. Any observation is welcome!
+```php
+The goal is to create a system autentication with JWT to a multilanguage RESTful API in Lumen, using always trying best practices.
+```
+Any observation is welcome!
 
 # How To #
-Check extended documentation in **apirf-lumen.master.pdf**
+Check extended documentation in **apirf-lumen.master.pdf** and **ft-authentication-with-JWT-tymon-jwt-auth.pdf**
 
 # Installation guide #
 
