@@ -64,6 +64,12 @@ $app->singleton(
     App\Http\Middleware\Localization::class
  ]);
 
+// Middleware for apply rules to fix messages of type OPTIONS,
+// that usually emit in systems like Angular or others.
+$app->middleware([
+    'CorsMiddleware' => App\Http\Middleware\CorsMiddleware::class
+]);
+
  $app->routeMiddleware([
      'auth' => App\Http\Middleware\Authenticate::class,
  ]);
@@ -87,7 +93,7 @@ $app->register(App\Providers\AuthServiceProvider::class);
 
 // Register LumenServiceProvider
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
-//
+
 // Add support for command php artisan route:list in Lumen
 $app->register(Appzcoder\LumenRoutesList\RoutesCommandServiceProvider::class);
 
