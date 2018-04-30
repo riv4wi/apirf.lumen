@@ -64,9 +64,9 @@ $app->singleton(
     App\Http\Middleware\Localization::class
  ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+ $app->routeMiddleware([
+     'auth' => App\Http\Middleware\Authenticate::class,
+ ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -79,10 +79,15 @@ $app->singleton(
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+ $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
+// Register AuthServiceProvider
+$app->register(App\Providers\AuthServiceProvider::class);
+
+// Register LumenServiceProvider
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
+//
 // Add support for command php artisan route:list in Lumen
 $app->register(Appzcoder\LumenRoutesList\RoutesCommandServiceProvider::class);
 
