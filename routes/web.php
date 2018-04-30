@@ -16,6 +16,14 @@ $router->get('/', function () use ($router) {
 });
 
 
+// Rules to fix messages of type OPTIONS, that usually emit in systems like Angular or others.
+$router->options('/{any:.*}', function () {
+    return response(['status' => 'success'])
+        ->header('Access-Control-Allow-Methods','OPTIONS, GET, POST, PUT, DELETE')
+        ->header('Access-Control-Allow-Headers', 'Authorization, Content-Type, Origin');
+});
+
+
 $router->group(['prefix' => 'api'], function () use ($router) {
 
     /* Manufacturers */
