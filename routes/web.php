@@ -23,8 +23,9 @@ $router->options('/{any:.*}', function () {
         ->header('Access-Control-Allow-Headers', 'Authorization, Content-Type, Origin');
 });
 
+$router->post('/auth/login', 'AuthController@postLogin');
 
-$router->group(['prefix' => 'api'], function () use ($router) {
+$router->group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () use ($router) {
 
     /* Manufacturers */
     $router->get('manufacturers',  ['uses' => 'ManufacturerController@index']);
